@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  };
+  handleInput = (event) => {
+    const { props } = this;
+    props.searchFunction(event.target.value);
+  }
 
   render () {
-    return <input className="form-control form-search" />;
+    return <input className="form-control form-search" onInput={this.handleInput} />;
   }
 }
 
